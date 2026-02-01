@@ -1,0 +1,14 @@
+# Python 环境 (最容易导致卡顿的元凶)
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# IDE 与系统
+.DS_Store
+.vscode/
+.trae/
+
+# 运行时生成的文件
+.config_backups/
+.docs/

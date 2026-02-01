@@ -1,0 +1,136 @@
+language_weights:
+- name: 简英双语
+  weight: 120
+  keywords:
+  - chs&eng
+  - cht&eng
+  - 简体&英文
+  - 双语
+  - 中英
+  - zh&en
+- name: 繁英双语
+  weight: 90
+  keywords:
+  - cht&eng
+  - 繁体&英文
+  - 繁英
+- name: 简体中文
+  weight: 80
+  keywords:
+  - chs
+  - sc
+  - 简体
+  - 简中
+  - zh
+- name: 繁体中文
+  weight: 70
+  keywords:
+  - cht
+  - tc
+  - 繁体
+  - 繁中
+- name: 纯英文
+  weight: 60
+  keywords:
+  - eng
+  - en
+  - english
+format_weights:
+- name: ass
+  weight: 100
+  description: 特效字幕格式，支持样式和特效
+- name: srt
+  weight: 80
+  description: 通用字幕格式
+lineage_bonus:
+  enabled: true
+  weight: 20
+  description: 如果字幕文件名包含与视频相同的压制组标识，给予额外加分
+  common_release_groups:
+  - eztv
+  - rarbg
+  - vxt
+  - yify
+  - yts
+  - sparks
+  - fgt
+  - mgb
+  - dimension
+  - deflate
+  - x264
+  - x265
+  - h264
+  - h265
+  - 1080p
+  - 720p
+  - 2160p
+  - 4k
+  - web-dl
+  - webrip
+  - bluray
+  - bdrip
+  - dvdrip
+file_extensions:
+  video:
+  - .mp4
+  - .mkv
+  - .avi
+  - .mov
+  - .wmv
+  - .flv
+  - .webm
+  subtitle:
+  - .ass
+  - .srt
+  - .sub
+  - .ssa
+tokenization:
+  separators:
+  - .
+  - _
+  - '-'
+  - '['
+  - ']'
+  - (
+  - )
+  - ' '
+  - ','
+  min_token_length: 2
+  ignore_tokens:
+  - the
+  - a
+  - an
+  - of
+  - in
+  - 'on'
+  - at
+  - to
+  - for
+  - and
+  - or
+  - but
+episode_patterns:
+- pattern: S(\d{1,2})E(\d{1,2})
+  season_group: 1
+  episode_group: 2
+- pattern: (\d{1,2})x(\d{1,2})
+  season_group: 1
+  episode_group: 2
+- pattern: (\d{1,2})(\d{2})
+  season_group: 1
+  episode_group: 2
+  condition: episode_group >= 10
+matching:
+  min_common_tokens: 1
+  min_score_threshold: 50
+  skip_on_conflict: true
+  log_unmatched: true
+safety:
+  dry_run: false
+  require_confirm: true
+  backup_enabled: false
+  backup_dir: .backup
+logging:
+  level: INFO
+  show_progress: true
+  log_file: submatcher.log
