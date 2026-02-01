@@ -40,13 +40,13 @@ dev = [
 ]
 
 [project.scripts]
-submatcher-mcp = "mcp_server:cli_main"
+mcp-submatcher = "mcp_server:cli_main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/submatcher"
-Documentation = "https://github.com/yourusername/submatcher#readme"
-Repository = "https://github.com/yourusername/submatcher"
-Issues = "https://github.com/yourusername/submatcher/issues"
+Homepage = "https://github.com/yourusername/mcp-submatcher"
+Documentation = "https://github.com/yourusername/mcp-submatcher#readme"
+Repository = "https://github.com/yourusername/mcp-submatcher"
+Issues = "https://github.com/yourusername/mcp-submatcher/issues"
 
 [dependency-groups]
 dev = [

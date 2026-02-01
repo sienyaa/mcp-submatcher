@@ -30,7 +30,7 @@ from config_nlp import ConfigMCPWrapper
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-server = Server("submatcher-server")
+server = Server("mcp-submatcher")
 
 adapter = SubMatcherAdapter()
 config_wrapper = ConfigMCPWrapper()

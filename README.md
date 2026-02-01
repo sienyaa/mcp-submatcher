@@ -34,7 +34,7 @@ brew install uv  # macOS
 uv sync
 
 # 3. 运行程序
-uv run python submatcher.py --help
+uv run mcp-submatcher --help
 ```
 
 #### 方法 2：使用传统方式
@@ -215,10 +215,10 @@ safety:
 
 ```bash
 # 使用 UV（推荐）
-uv run python submatcher.py <目录路径> [选项]
+uv run mcp-submatcher <目录路径> [选项]
 
 # 使用传统方式
-python submatcher.py <目录路径> [选项]
+mcp-submatcher <目录路径> [选项]
 ```
 
 ### 命令行参数
@@ -239,10 +239,10 @@ python submatcher.py <目录路径> [选项]
 
 ```bash
 # 使用 UV（推荐）
-uv run python submatcher.py /path/to/videos
+mcp-submatcher /path/to/videos
 
 # 使用传统方式
-python submatcher.py /path/to/videos
+mcp-submatcher /path/to/videos
 ```
 
 **输出示例**：
@@ -270,10 +270,10 @@ python submatcher.py /path/to/videos
 
 ```bash
 # 使用 UV（推荐）
-uv run python submatcher.py /path/to/videos -v
+mcp-submatcher /path/to/videos -v
 
 # 使用传统方式
-python submatcher.py /path/to/videos -v
+mcp-submatcher /path/to/videos -v
 ```
 
 **输出示例**：
@@ -306,10 +306,10 @@ python submatcher.py /path/to/videos -v
 
 ```bash
 # 使用 UV（推荐）
-uv run python submatcher.py /path/to/videos --confirm
+mcp-submatcher /path/to/videos --confirm
 
 # 使用传统方式
-python submatcher.py /path/to/videos --confirm
+mcp-submatcher /path/to/videos --confirm
 ```
 
 **输出示例**：
@@ -333,13 +333,13 @@ python submatcher.py /path/to/videos --confirm
 #### 4. 使用自定义配置文件
 
 ```bash
-python submatcher.py /path/to/videos -c /path/to/custom_config.yaml
+mcp-submatcher /path/to/videos -c /path/to/custom_config.yaml
 ```
 
 #### 5. 组合使用多个参数
 
 ```bash
-python submatcher.py /path/to/videos --confirm --verbose
+mcp-submatcher /path/to/videos --confirm --verbose
 ```
 
 ## 工作原理
@@ -478,19 +478,19 @@ Breaking.Bad.S01E01.1080p.BluRay.x264-SPARKS.mkv
 ```bash
 # 1. 演习模式，查看拟重命名结果
 # 使用 UV（推荐）
-uv run python submatcher.py /path/to/videos -v
+mcp-submatcher /path/to/videos -v
 
-# 或使用传统方式
-python submatcher.py /path/to/videos -v
+# 使用传统方式
+mcp-submatcher /path/to/videos -v
 
 # 2. 检查输出，确认匹配结果正确
 
 # 3. 执行实际重命名
 # 使用 UV（推荐）
-uv run python submatcher.py /path/to/videos --confirm
+mcp-submatcher /path/to/videos --confirm
 
-# 或使用传统方式
-python submatcher.py /path/to/videos --confirm
+# 使用传统方式
+mcp-submatcher /path/to/videos --confirm
 ```
 
 ### 2. 批量处理多个目录
@@ -499,7 +499,7 @@ python submatcher.py /path/to/videos --confirm
 # 使用脚本批量处理
 for dir in /path/to/series/*/; do
     echo "Processing: $dir"
-    python submatcher.py "$dir" --confirm
+    mcp-submatcher "$dir" --confirm
 done
 ```
 
@@ -515,7 +515,7 @@ cp config.yaml my_config.yaml
 vim my_config.yaml
 
 # 使用自定义配置
-python submatcher.py /path/to/videos -c my_config.yaml
+mcp-submatcher /path/to/videos -c my_config.yaml
 ```
 
 ### 4. 定期维护

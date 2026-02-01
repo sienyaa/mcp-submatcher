@@ -1,5 +1,5 @@
 ---
-name: "submatcher-mcp"
+name: "mcp-submatcher"
 description: "字幕匹配重命名工具 MCP 服务器。当用户需要自动匹配和重命名字幕文件时调用此技能。"
 ---
 
@@ -53,7 +53,7 @@ uvx mcp-submatcher
 ```json
 {
   "mcpServers": {
-    "submatcher": {
+    "mcp-submatcher": {
       "command": "uvx",
       "args": ["mcp-submatcher"]
     }
